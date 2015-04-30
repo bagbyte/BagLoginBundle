@@ -45,3 +45,50 @@ BagLoginBundle full configuration description
       change_password:                    # This view handles the password change
       change_password_completed:          # This view shows the succesfully changed password message
 ```
+
+Here a fully example
+
+``` yml
+# app/config/config.yml
+  bag_login:
+    user_class:                           Project\CoreBundle\Entitiy\User
+    email:
+      from_address:                       no_reply@company.com
+      from_display_name:                  Company Name Ltd.
+      send_registration_email:            true
+      require_account_verification:       false
+      send_activation_email:              false
+      events:
+        registration:
+          subject:                        Thank you for the registration at Company Name Ltd.
+          view:                           ProjectCoreBundle:Email:registration_email.html.twig
+        account_activation:
+          subject:                        Your account is now active
+          view:                           ProjectCoreBundle:Email:account_activated.html.twig
+    form:
+      type:
+        registration:                     Project\CoreBundle\Form\Type\RegistrationType
+    social_network:
+      facebook:
+        appId:                            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        secret:                           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      twitter:
+        appId:                            TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+        secret:                           YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+      google:
+        appId:                            GGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+        secret:                           ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+    views:
+      page_not_found:                     ProjectCoreBundle:Default:page_not_found.html.twig
+      activation_email_request:           ProjectCoreBundle:Default:activation_email_request.html.twig
+      activation_email_request_completed: ProjectCoreBundle:Default:activation_email_request_completed.html.twig
+      registration:                       ProjectCoreBundle:Default:registration.html.twig
+      registration_completed:             ProjectCoreBundle:Default:registration_completed.html.twig
+      account_activated:                  ProjectCoreBundle:Default:account_activated.html.twig
+      login:                              ProjectCoreBundle:Default:login.html.twig
+      logout:                             ProjectCoreBundle:Default:logout.html.twig
+      request_new_password:               ProjectCoreBundle:Default:request_new_password.html.twig
+      request_new_password_completed:     ProjectCoreBundle:Default:request_new_password_completed.html.twig
+      change_password:                    ProjectCoreBundle:Default:change_password.html.twig
+      change_password_completed:          ProjectCoreBundle:Default:change_password_completed.html.twig
+```
