@@ -1,54 +1,49 @@
-Getting Started With FOSUserBundle
+Getting Started With BagLoginBundle
 ==================================
-
-The Symfony2 security component provides a flexible security framework that
-allows you to load users from configuration, a database, or anywhere else
-you can imagine. The FOSUserBundle builds on top of this to make it quick
-and easy to store users in a database.
-
-So, if you need to persist and fetch the users in your system to and from
-a database, then you're in the right place.
+ - 
 
 ## Prerequisites
 
 This version of the bundle requires Symfony 2.1+. If you are using Symfony
 2.0.x, please use the 1.2.x releases of the bundle.
 
-### Translations
+The BagLoginBundle is build on top of following bundles:
 
-If you wish to use default texts provided in this bundle, you have to make
-sure you have translator enabled in your config.
+ - [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle)
+ - [FOSRestBundle](https://github.com/FriendsOfSymfony/FOSRestBundle)
+ - [FOSOAuthServerBundle](https://github.com/FriendsOfSymfony/FOSOAuthServerBundle)
+ - [HWIOAuthBundle](https://github.com/hwi/HWIOAuthBundle)
 
-``` yaml
-# app/config/config.yml
-
-framework:
-    translator: ~
-```
-
-For more information about translations, check [Symfony documentation](http://symfony.com/doc/current/book/translation.html).
+Following links can be useful to:
+ - [Integrating FOSOAuthServerBundle with FOSUserBundle](http://blog.tankist.de/blog/2013/07/16/oauth2-explained-part-1-principles-and-terminology/)
+ - [Integrating HWIOAuthBundle with FOSUserBundle](https://gist.github.com/danvbe/4476697)
 
 ## Installation
 
 Installation is a quick (I promise!) 7 step process:
 
-1. Download FOSUserBundle using composer
+1. Download BagLoginBundle using composer
 2. Enable the Bundle
+
+
+
+
+
 3. Create your User class
 4. Configure your application's security.yml
 5. Configure the FOSUserBundle
-6. Import FOSUserBundle routing
+6. Import BagLoginBundle routing
 7. Update your database schema
 
-### Step 1: Download FOSUserBundle using composer
+### Step 1: Download BagLoginBundle using composer
 
-Add FOSUserBundle by running the command:
+Add BagLoginBundle by running the command:
 
 ``` bash
-$ php composer.phar require friendsofsymfony/user-bundle "~2.0@dev"
+$ php composer.phar require bagbyte/login-bundle "dev-master"
 ```
 
-Composer will install the bundle to your project's `vendor/friendsofsymfony` directory.
+Composer will install the bundle to your project's `vendor/bagbyte` directory.
 
 ### Step 2: Enable the bundle
 
@@ -62,7 +57,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new FOS\UserBundle\FOSUserBundle(),
+        new Bag\LoginBundle\BagLoginBundle(),
     );
 }
 ```
