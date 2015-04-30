@@ -10,6 +10,7 @@ Features include:
 - Registration support, with an optional confirmation per email
 - Login support
 - Password reset support
+- Social network login support (Facebook, Twitter, Google+)
 
 The bundle provides both web and REST APIs interfaces.
 
