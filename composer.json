@@ -1,0 +1,29 @@
+{
+    "name": "bagbyte/login-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony BagLoginBundle",
+    "keywords": ["Login management"],
+    "homepage": "https://github.com/bagbyte",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sabino Papagna",
+            "email": "sabino84@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "friendsofsymfony/rest-bundle": "dev-master",
+        "friendsofsymfony/oauth-server-bundle": "dev-master",
+        "hwi/oauth-bundle": "0.4.*@dev"
+    },
+    "autoload": {
+        "psr-4": { "Bag\\LoginBundle\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "dev-master"
+        }
+    }
+}
