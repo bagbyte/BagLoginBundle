@@ -1,0 +1,83 @@
+bag_login_web_social:
+    pattern: /login/{network}
+    defaults: { _controller: BagLoginBundle:Social:login, _format:json }
+    requirements:
+        network:  facebook|google|twitter
+
+# Registration
+
+bag_login_web_request_activation_email:
+    pattern:  /request/activation/email
+    defaults: { _controller: BagLoginBundle:Registration:requestActivationEmail }
+    requirements:
+        _method:  GET|POST
+
+bag_login_web_activation_email_sent:
+    pattern:  /activation/email/sent
+    defaults: { _controller: BagLoginBundle:Registration:requestActivationEmailSent }
+    requirements:
+        _method:  GET
+
+bag_login_web_register:
+    pattern:  /register
+    defaults: { _controller: BagLoginBundle:Registration:register }
+    requirements:
+        _method:  GET|POST
+
+bag_login_web_registration_done:
+    pattern:  /registration/done
+    defaults: { _controller: BagLoginBundle:Registration:registrationCompleted }
+    requirements:
+        _method:  GET|POST
+
+bag_login_web_confirm_registration:
+    pattern:  /activate/account/{token}
+    defaults: { _controller: BagLoginBundle:Registration:confirmRegistration }
+    requirements:
+        _method:  GET|POST
+
+bag_login_web_registration_confirmed:
+    pattern:  /registration/confirmed
+    defaults: { _controller: BagLoginBundle:Registration:registrationConfirmed }
+    requirements:
+        _method:  GET|POST
+
+# Login
+
+bag_login_web_login:
+    pattern:  /login
+    defaults: { _controller: FOSUserBundle:Security:webLogin }
+    requirements:
+        _method:  GET
+
+bag_login_web_logout:
+    pattern:  /logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
+    requirements:
+        _method:  GET
+
+bag_login_web_login_check:
+    pattern:  /login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+    requirements:
+        _method:  POST
+
+# Password reset
+
+bag_login_web_password_reset:
+    pattern:  /request/new/password
+    defaults: { _controller: BagLoginBundle:Password:requestNew }
+    requirements:
+        _method:  GET|POST
+
+bag_login_web_password_reset_done:
+    pattern:  /request/new/password/completed
+    defaults: { _controller: BagLoginBundle:Password:requestCompleted }
+    requirements:
+        _method:  GET
+
+bag_login_web_resetting_reset:
+    pattern:  /reset/password/{token}
+    defaults: { _controller: BagLoginBundle:Password:reset }
+    requirements:
+        _method:  GET|POST
