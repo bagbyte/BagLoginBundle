@@ -44,7 +44,6 @@ BagLoginBundle full configuration description
       registration_completed:             # This view shows the succesfully registration message
       account_activated:                  # This view shows the account activated message
       login:                              # This view handles the login form
-      logout:                             # This view shows the succesfully logout message
       request_new_password:               # This view handles the new password request form
       request_new_password_completed:     # This view shows the succesfully password reset
       change_password:                    # This view handles the password change
@@ -96,7 +95,6 @@ Here a fully example
       registration_completed:             ProjectCoreBundle:Default:registration_completed.html.twig
       account_activated:                  ProjectCoreBundle:Default:account_activated.html.twig
       login:                              ProjectCoreBundle:Default:login.html.twig
-      logout:                             ProjectCoreBundle:Default:logout.html.twig
       request_new_password:               ProjectCoreBundle:Default:request_new_password.html.twig
       request_new_password_completed:     ProjectCoreBundle:Default:request_new_password_completed.html.twig
       change_password:                    ProjectCoreBundle:Default:change_password.html.twig
