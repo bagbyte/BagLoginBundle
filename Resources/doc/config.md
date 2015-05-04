@@ -33,6 +33,7 @@ BagLoginBundle full configuration description
         secret:                           # GooglePlus's secret
     views:
       page_not_found:                     # Page not found view
+      error:                              # This view shows an error message
       activation_email_request:           # This view handles the activation email request form
       activation_email_request_completed: # This view shows the succesfully activation email sent
       registration:                       # This view handles the registration form
@@ -80,6 +81,7 @@ Here a fully example
         secret:                           ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
     views:
       page_not_found:                     ProjectCoreBundle:Default:page_not_found.html.twig
+      error:                              ProjectCoreBundle:Default:error.html.twig
       activation_email_request:           ProjectCoreBundle:Default:activation_email_request.html.twig
       activation_email_request_completed: ProjectCoreBundle:Default:activation_email_request_completed.html.twig
       registration:                       ProjectCoreBundle:Default:registration.html.twig
