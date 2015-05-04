@@ -11,12 +11,16 @@ BagLoginBundle full configuration description
       send_registration_email:            # true|false, if true, after a new registration the user is notified with an email
       require_account_verification:       # true|false, if true, after a new registration the account will not be active, a link will be sent in the registration email, the user has to click on it in order to activate the account
       send_activation_email:              # true|false, if true, after the activation of the account, an email is sent to the user
+      send_password_changed_email:        # true|false, if true, after the user change his password, an email is sent to the user
       events:
         registration:
           subject:                        # Subject to be used for the registration email
           view:                           # View defining the email content
         account_activation:
           subject:                        # Subject to be used for the account activation email
+          view:                           # View defining the email content
+        password_changed:
+          subject:                        # Subject to be used for the password changed email
           view:                           # View defining the email content
     form:
       type:
@@ -59,6 +63,7 @@ Here a fully example
       send_registration_email:            true
       require_account_verification:       false
       send_activation_email:              false
+      send_password_changed_email:        true
       events:
         registration:
           subject:                        Thank you for the registration at Company Name Ltd.
@@ -66,6 +71,9 @@ Here a fully example
         account_activation:
           subject:                        Your account is now active
           view:                           ProjectCoreBundle:Email:account_activated.html.twig
+        password_changed:
+          subject:                        Your password has been changed
+          view:                           ProjectCoreBundle:Email:password_changed.html.twig
     form:
       type:
         registration:                     Project\CoreBundle\Form\Type\RegistrationType
