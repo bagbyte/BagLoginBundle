@@ -1,16 +1,18 @@
 <?php
 namespace Bag\LoginBundle\Controller;
 
+use OAuth2\OAuth2ServerException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
-use OAuth2\OAuth2ServerException;
 
 class SocialController extends Controller
 {
   /**
    * @param Request $request
    * @param String $network
+   * 
+   * Get parameter: String <strong>client_id</strong>
+   * Get parameter: String <strong>client_secret</strong>
    * 
    * @return type
    */
