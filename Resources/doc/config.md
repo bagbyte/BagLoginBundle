@@ -14,12 +14,15 @@ BagLoginBundle full configuration description
       send_password_changed_email:        # true|false, if true, after the user change his password, an email is sent to the user
       events:
         registration:
+          format:                         # html|text, defines the email content format
           subject:                        # Subject to be used for the registration email
           view:                           # View defining the email content
         account_activation:
+          format:                         # html|text, defines the email content format
           subject:                        # Subject to be used for the account activation email
           view:                           # View defining the email content
         password_changed:
+          format:                         # html|text, defines the email content format
           subject:                        # Subject to be used for the password changed email
           view:                           # View defining the email content
     form:
@@ -65,12 +68,15 @@ Here a fully example
       send_password_changed_email:        true
       events:
         registration:
+          format:                         html
           subject:                        Thank you for the registration at Company Name Ltd.
           view:                           ProjectCoreBundle:Email:registration_email.html.twig
         account_activation:
+          format:                         html
           subject:                        Your account is now active
           view:                           ProjectCoreBundle:Email:account_activated.html.twig
         password_changed:
+          format:                         html
           subject:                        Your password has been changed
           view:                           ProjectCoreBundle:Email:password_changed.html.twig
     form:
