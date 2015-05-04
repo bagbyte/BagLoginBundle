@@ -81,7 +81,7 @@ Here a fully example
           view:                           ProjectCoreBundle:Email:account_activated.html.twig
         request_new_password:
           format:                         html
-          subject:                        A new password request has been submitted
+          subject:                        A new password has been requested
           view:                           ProjectCoreBundle:Email:request_new_password.html.twig
         password_changed:
           format:                         html
