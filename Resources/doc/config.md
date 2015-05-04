@@ -21,6 +21,10 @@ BagLoginBundle full configuration description
           format:                         # html|text, defines the email content format
           subject:                        # Subject to be used for the account activation email
           view:                           # View defining the email content
+        request_new_password:
+          format:                         # html|text, defines the email content format
+          subject:                        # Subject to be used for the password change request email
+          view:                           # View defining the email content
         password_changed:
           format:                         # html|text, defines the email content format
           subject:                        # Subject to be used for the password changed email
@@ -75,6 +79,10 @@ Here a fully example
           format:                         html
           subject:                        Your account is now active
           view:                           ProjectCoreBundle:Email:account_activated.html.twig
+        request_new_password:
+          format:                         html
+          subject:                        A new password request has been submitted
+          view:                           ProjectCoreBundle:Email:request_new_password.html.twig
         password_changed:
           format:                         html
           subject:                        Your password has been changed
