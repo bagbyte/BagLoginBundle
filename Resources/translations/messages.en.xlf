@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>form.label.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>form.label.email_required</source>
+                <target>Email *</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>label.request_activation_email</source>
+                <target>Request activation email</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>message.email_not_found</source>
+                <target>Email not found</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>message.password_already_requested</source>
+                <target>Password reset already requested</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
