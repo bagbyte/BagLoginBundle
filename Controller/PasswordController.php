@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use FOS\UserBundle\FOSUserEvents;
-use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
@@ -163,24 +162,5 @@ class PasswordController extends Controller
     $view = $this->container->getParameter('bag_login.views');
     
     return $this->render($view['change_password_completed']);
-  }
-
-  /**
-   * Get the truncated email displayed when requesting the resetting.
-   *
-   * The default implementation only keeps the part following @ in the address.
-   *
-   * @param \FOS\UserBundle\Model\UserInterface $user
-   *
-   * @return string
-   */
-  protected function getObfuscatedEmail(UserInterface $user)
-  {
-    $email = $user->getEmail();
-    if (false !== $pos = strpos($email, '@')) {
-      $email = '...' . substr($email, $pos);
-    }
-
-    return $email;
   }
 }
