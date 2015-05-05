@@ -26,9 +26,3 @@ bag_login_api_password_reset:
     defaults: { _controller: BagLoginBundle:API:requestNewPassword, _format:json }
     requirements:
         _method:  POST
-
-bag_login_api_change_password:
-    pattern:  /change/password/{token}
-    defaults: { _controller: BagLoginBundle:API:setPassword, _format:json }
-    requirements:
-        _method:  POST
