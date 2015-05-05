@@ -121,8 +121,9 @@ class RegistrationController extends Controller
   public function registrationCompletedAction()
   {
     $view = $this->container->getParameter('bag_login.views');
+    $settings = $this->container->getParameter('bag_login.email');
     
-    return $this->render($view['registration_completed']);
+    return $this->render($view['registration_completed'], array('sendActivationEmail' => $settings['require_account_verification']));
   }
   
   /**
