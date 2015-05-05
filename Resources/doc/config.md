@@ -1,7 +1,7 @@
 BagLoginBundle full configuration description
 ==================================
 
-``` yml
+``` yaml
 # app/config/config.yml
   bag_login:
     user_class:                           # Your User class full path
@@ -59,7 +59,7 @@ BagLoginBundle full configuration description
 
 Here a fully example
 
-``` yml
+``` yaml
 # app/config/config.yml
   bag_login:
     user_class:                           Project\CoreBundle\Entitiy\User
