@@ -1,9 +1,3 @@
-bag_login_web_social:
-    pattern: /login/{network}
-    defaults: { _controller: BagLoginBundle:Social:getSocialToken, _format:json }
-    requirements:
-        network:  facebook|google|twitter
-
 bag_login_web_page_not_found:
     pattern: /pageNotFound
     defaults: { _controller: BagLoginBundle:Default:pageNotFound }
