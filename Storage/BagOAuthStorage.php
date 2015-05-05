@@ -63,27 +63,13 @@ class BagOAuthStorage extends OAuthStorage
     $this->grantExtensions = array();
   }
   
-  private function getSocialNetworks() {
-    $networks = array();
-    
-    $socialNetworks = $this->container->gasParameter('bag_login.social_network');
-    $allNetworks = $this->container->gasParameter('bag_login.supported_social_networks');
-    
-    foreach ($allNetworks as $current) {
-      if (in_array($current, $socialNetworks))
-        $networks[] = $current;
-    }
-    
-    return $networks;
-  }
-  
   public function checkSocialCredentials(IOAuth2Client $client, $socialId, $socialToken, $network)
   {
     if (!$client instanceof ClientInterface) {
       throw new \InvalidArgumentException('Client has to implement the ClientInterface');
     }
 
-    if (!in_array(strtolower($network), $this->getSocialNetworks()))
+    if (!in_array(strtolower($network), $this->container->get('bag_login.functions')->getSocialNetworks()))
       throw new \InvalidArgumentException('Invalid network');
     
     $userClass = $this->container->gasParameter('bag_login.user_class');
