@@ -17,6 +17,11 @@ services:
             entityManager: "@doctrine.orm.entity_manager"
             templateEngine: "@templating"
 
+    bag_login.functions:
+        class: Bag\LoginBundle\BagLoginFunctions.php
+        arguments:
+            container: "@service_container"
+
     bag_login.storage:
         class: Bag\LoginBundle\Storage\BagOAuthStorage
         arguments: ["@fos_oauth_server.client_manager", "@fos_oauth_server.access_token_manager", "@fos_oauth_server.refresh_token_manager", "@fos_oauth_server.auth_code_manager", "@?fos_oauth_server.user_provider", "@security.encoder_factory", "@doctrine.orm.entity_manager","@service_container"]
