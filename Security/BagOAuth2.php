@@ -30,27 +30,13 @@ class BagOAuth2 extends OAuth2
     
     parent::__construct($storage, $config);
   }
-  
-  private function getSocialNetworks() {
-    $networks = array();
-    
-    $socialNetworks = $this->container->gasParameter('bag_login.social_network');
-    $allNetworks = $this->container->gasParameter('bag_login.supported_social_networks');
-    
-    foreach ($allNetworks as $current) {
-      if (in_array($current, $socialNetworks))
-        $networks[] = $current;
-    }
-    
-    return $networks;
-  }
     
   public function grantAccessToken(Request $request = NULL, $network = NULL)
   {
     $this->network = $network;
     
     if ($this->network != NULL) {
-      if (!in_array(strtolower($this->network), $this->getSocialNetworks()))
+      if (!in_array(strtolower($this->network), $this->container->get('bag_login.functions')->getSocialNetworks()))
         throw new OAuth2ServerException(self::HTTP_BAD_REQUEST, self::ERROR_INVALID_REQUEST, 'Invalid network parameter or parameter missing');
     }
     
