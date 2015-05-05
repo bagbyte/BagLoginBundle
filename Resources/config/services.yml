@@ -1,0 +1,26 @@
+parameters:
+    bag_login.supported_social_networks: ["facebook", "twitter", "google"]
+
+services:
+    bag_login.event_listener:
+        class: 'Bag\LoginBundle\EventListener\BagLoginEventListener'
+        arguments:
+            container: "@service_container"
+            entityManager: "@doctrine.orm.entity_manager"
+        tags:
+            - { name: 'kernel.event_subscriber'}
+
+    bag_login.notification_manager:
+        class: Bag\LoginBundle\Service\BagLoginNotificationManager
+        arguments:
+            container: "@service_container"
+            entityManager: "@doctrine.orm.entity_manager"
+            templateEngine: "@templating"
+
+    bag_login.storage:
+        class: Bag\LoginBundle\Storage\BagOAuthStorage
+        arguments: ["@fos_oauth_server.client_manager", "@fos_oauth_server.access_token_manager", "@fos_oauth_server.refresh_token_manager", "@fos_oauth_server.auth_code_manager", "@?fos_oauth_server.user_provider", "@security.encoder_factory", "@doctrine.orm.entity_manager","@service_container"]
+
+    bag_login.server:
+        class: Bag\LoginBundle\Security\BagOAuth2
+        arguments: ["@mia_oauth_server.storage", "%fos_oauth_server.server.options%"]
