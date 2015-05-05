@@ -17,7 +17,7 @@ The bundle provides both web and REST APIs interfaces.
 Documentation
 -------------
 
-The bulk of the documentation is stored in the `Resources/doc/index.md`
+The bulk of the documentation is stored in the [Resources/doc/index.md](https://github.com/bagbyte/BagLoginBundle/blob/master/Resources/doc/index.md)
 file in this bundle:
 
 Installation
