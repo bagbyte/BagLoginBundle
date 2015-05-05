@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Login</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+  <h1>Login</h1>
+
+  <hr></hr>
+  
+  <form action="{{ path("bag_login_web_login_check") }}" method="POST">
+    {% if error is defined%}
+      <div class="help-inline">{{ error|trans({},'FOSUserBundle') }}</div>
+    {% endif %}
+    {{ form_widget(form) }}
+    <input type="submit" value="Login" />
+  </form>
+</body>
+</html>
