@@ -1,0 +1,7 @@
+bag_login_web:
+    resource: "@BagLoginBundle/Resources/config/routing_web.yml"
+    prefix:   /web/
+    
+bag_login_api:
+    resource: "@BagLoginBundle/Resources/config/routing_api.yml"
+    prefix:   /api/
