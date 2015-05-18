@@ -28,4 +28,4 @@ services:
 
     bag_login.server:
         class: Bag\LoginBundle\Security\BagOAuth2
-        arguments: ["@mia_oauth_server.storage", "%fos_oauth_server.server.options%"]
+        arguments: ["@bag_login.storage", "%fos_oauth_server.server.options%"]
