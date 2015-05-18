@@ -84,13 +84,9 @@ class BagOAuthStorage extends OAuthStorage
 
     if (null !== $user) {
       $encoder = $this->encoderFactory->getEncoder($user);
-
-//	  $this->container->get('ladybug')->log($user);
 	  
       if ($this->checkSocialAccessToken($socialId, $socialToken, $network)) {
         $this->updateSocialToken($user, $socialId, $socialToken, $network);
-        
-//	  $this->container->get('ladybug')->log($user);
 	  
         // dispatch event
         $this->container->get('event_dispatcher')->dispatch(BagLoginEvents::USER_LOGGED_IN_WITH_SOCIAL, new UserEvent($user, false, 'api', $network));
@@ -142,9 +138,9 @@ class BagOAuthStorage extends OAuthStorage
       
       if (array_key_exists('id',$result) && ($result['id'] == $socialId))
         return true;
-    } catch (\FacebookApiException $e) {
-      $this->container->get('ladybug')->log($e);
-    }
+    } catch (\Exception $e) {    
+	}
+	
     return false;
   }
   
