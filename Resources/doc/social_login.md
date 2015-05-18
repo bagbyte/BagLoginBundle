@@ -23,3 +23,9 @@ bag_login:
       fields:                           # fields to be fetched from Facebook profile, with corresponding User's object property to be filled
 ```
 
+# Facebook
+Possible fields to be fetched from Facebook user profile:
+
+- name
+- lastName
+- email
