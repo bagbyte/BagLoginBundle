@@ -126,7 +126,7 @@ class BagOAuthStorage extends OAuthStorage
   {
     $settings = $this->container->getParameter('bag_login.social_network');
     $facebook = new \Facebook(array(
-      'appId'  => $settings['facebook']['appId'],
+      'appId'  => $settings['facebook']['app_id'],
       'secret' => $settings['facebook']['secret'],
     ));
     
