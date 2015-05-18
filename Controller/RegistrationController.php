@@ -160,7 +160,7 @@ class RegistrationController extends Controller
     $this->container->get('event_dispatcher')->dispatch(FOSUserEvents::REGISTRATION_CONFIRMED, new FilterUserResponseEvent($user, $request, null));
     $this->container->get('event_dispatcher')->dispatch(BagLoginEvents::USER_REGISTRATION_CONFIRMED, new UserEvent($user, true, 'web'));
 
-    return $this->redirect($this->generateUrl('mia_mobile_registration_confirmed'));
+    return $this->redirect($this->generateUrl('bag_login_web_registration_done'));
   }
 
   /**
