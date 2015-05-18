@@ -128,7 +128,7 @@ class BagOAuthStorage extends OAuthStorage
   
   private function checkFacebookAccessToken($socialId, $socialToken)
   {
-    $settings = $this->container->getParameter('mia_core.social_network');
+    $settings = $this->container->getParameter('bag_login.social_network');
     $facebook = new \Facebook(array(
       'appId'  => $settings['facebook']['appId'],
       'secret' => $settings['facebook']['secret'],
