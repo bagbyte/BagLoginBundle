@@ -24,7 +24,7 @@ bag_login:
 ```
 
 # Facebook
-Possible fields to be fetched from Facebook user profile:
+Possible fields that can be fetched from Facebook user's profile:
 
 - name
 - lastName
