@@ -38,12 +38,13 @@ bag_login:
       secret:                           # Facebook's secret
       fields:                           # List of fields to be collected from Facebook and user's object target properties
     twitter:
-      consumer_key:                     # Twitter's appId
-      consumer_secret:                  # Twitter's secret
+      consumer_key:                     # Twitter's consumer key
+      consumer_secret:                  # Twitter's consumer secret
       fields:                           # List of fields to be collected from Twitter and user's object target
     google:
-      appId:                            # GooglePlus's appId
-      secret:                           # GooglePlus's secret
+      client_id:                        # GooglePlus's client id
+      client_secret:                    # GooglePlus's client secret
+      api_key:                          # GooglePlus's api key
       fields:                           # List of fields to be collected from Google+ and user's object target
   views:
     page_not_found:                     # Page not found view
@@ -103,9 +104,10 @@ bag_login:
       consumer_secret:                  YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
       fields:                           { name: firstName, email: email }
     google:
-      appId:                            GGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-      secret:                           ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
-      fields:                           { name: firstName, email: email }
+      client_id:                        GGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+      client_secret:                    ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+      api_key:                          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      fields:                           { name['familyName']: lastName, name['givenName']: firstName, emails[0]['value']: email }
   views:
     page_not_found:                     ProjectCoreBundle:Default:page_not_found.html.twig
     error:                              ProjectCoreBundle:Default:error.html.twig
