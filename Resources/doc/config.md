@@ -8,9 +8,9 @@ bag_login:
   email:
     from_address:                       # email address used as sender in emails
     from_display_name:                  # email name to display as sender in emails
-    send_registration_email:            # true|false, if true, after a new registration the user is notified with an email
     require_account_verification:       # true|false, if true, after a new registration the account will not be active, a link will be sent in the registration email, the user has to click on it in order to activate the account
-    send_activation_email:              # true|false, if true, after the activation of the account, an email is sent to the user
+    send_registration_email:            # true|false, if true, after a new registration the user is notified with an email
+    send_account_activated_email:       # true|false, if true, after the activation of the account, an email is sent to the user
     send_password_changed_email:        # true|false, if true, after the user change his password, an email is sent to the user
     events:
       registration:
@@ -36,25 +36,13 @@ bag_login:
     facebook:
       app_id:                           # Facebook's app ID
       secret:                           # Facebook's secret
-      fields:                           # List of fields to be collected from Facebook and user's object target properties
-    twitter:
-      consumer_key:                     # Twitter's consumer key
-      consumer_secret:                  # Twitter's consumer secret
-      fields:                           # List of fields to be collected from Twitter and user's object target
-    google:
-      client_id:                        # GooglePlus's client id
-      client_secret:                    # GooglePlus's client secret
-      api_key:                          # GooglePlus's api key
-      fields:                           # List of fields to be collected from Google+ and user's object target
   views:
-    page_not_found:                     # Page not found view
-    error:                              # This view shows an error message
-    activation_email_request:           # This view handles the activation email request form
-    activation_email_request_completed: # This view shows the succesfully activation email sent
     registration:                       # This view handles the registration form
     registration_completed:             # This view shows the succesfully registration message
     account_activated:                  # This view shows the account activated message
     login:                              # This view handles the login form
+    activation_email_request:           # This view handles the activation email request form
+    activation_email_request_completed: # This view shows the succesfully activation email sent
     request_new_password:               # This view handles the new password request form
     request_new_password_completed:     # This view shows the succesfully password reset
     change_password:                    # This view handles the password change
@@ -70,9 +58,9 @@ bag_login:
   email:
     from_address:                       no_reply@company.com
     from_display_name:                  Company Name Ltd.
-    send_registration_email:            true
     require_account_verification:       false
-    send_activation_email:              false
+    send_registration_email:            true
+    send_account_activated_email:       false
     send_password_changed_email:        true
     events:
       registration:
@@ -98,25 +86,13 @@ bag_login:
     facebook:
       app_id:                           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       secret:                           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-      fields:                           { name: firstName, email: email }
-    twitter:
-      consumer_key:                     TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-      consumer_secret:                  YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-      fields:                           { name: firstName, email: email }
-    google:
-      client_id:                        GGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-      client_secret:                    ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
-      api_key:                          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      fields:                           { name['familyName']: lastName, name['givenName']: firstName, emails[0]['value']: email }
   views:
-    page_not_found:                     ProjectCoreBundle:Default:page_not_found.html.twig
-    error:                              ProjectCoreBundle:Default:error.html.twig
-    activation_email_request:           ProjectCoreBundle:Default:activation_email_request.html.twig
-    activation_email_request_completed: ProjectCoreBundle:Default:activation_email_request_completed.html.twig
     registration:                       ProjectCoreBundle:Default:registration.html.twig
     registration_completed:             ProjectCoreBundle:Default:registration_completed.html.twig
     account_activated:                  ProjectCoreBundle:Default:account_activated.html.twig
     login:                              ProjectCoreBundle:Default:login.html.twig
+    activation_email_request:           ProjectCoreBundle:Default:activation_email_request.html.twig
+    activation_email_request_completed: ProjectCoreBundle:Default:activation_email_request_completed.html.twig
     request_new_password:               ProjectCoreBundle:Default:request_new_password.html.twig
     request_new_password_completed:     ProjectCoreBundle:Default:request_new_password_completed.html.twig
     change_password:                    ProjectCoreBundle:Default:change_password.html.twig
