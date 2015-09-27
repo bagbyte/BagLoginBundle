@@ -10,7 +10,7 @@ Features include:
 - Registration, confirmation through email can be configured
 - Login
 - Password reset
-- Social network login (Facebook, Twitter, Google+)
+- Facebook login
 - APIs for all the above features
 
 Documentation
