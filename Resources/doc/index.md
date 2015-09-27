@@ -99,6 +99,7 @@ of the bundle.
 
 The following documents are available:
 
+- [Endpoints](endpoints.md)
 - [Social Networks Login](social_login.md)
 - [Overriding Templates](overriding_templates.md)
 - [Overriding Forms](overriding_forms.md)
