@@ -1,18 +1,17 @@
 BagLoginBundle
 =============
 
-The BagLoginBundle adds support for a login user system in Symfony2.
+The BagLoginBundle adds login support in Symfony2.
 It provides a flexible framework for login management that aims to handle
 common tasks such as user registration, login, new password request, etc...
 
 Features include:
 
-- Registration support, with an optional confirmation per email
-- Login support
-- Password reset support
-- Social network login support (Facebook, Twitter, Google+)
-
-The bundle provides both web and REST APIs interfaces.
+- Registration, confirmation through email can be configured
+- Login
+- Password reset
+- Social network login (Facebook, Twitter, Google+)
+- APIs for all the above features
 
 Documentation
 -------------
@@ -23,7 +22,7 @@ file in this bundle:
 Installation
 ------------
 
-All the installation instructions are located in the documentation.
+All the installation instructions are located in the [documentation](https://github.com/bagbyte/BagLoginBundle/blob/master/Resources/doc/index.md).
 
 License
 -------
