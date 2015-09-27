@@ -4,7 +4,7 @@ BagLoginBundle full configuration description
 ``` yaml
 # app/config/config.yml
 bag_login:
-  user_class:                           # Your User class full path
+  user_class:                           # Your User class full path, default: fos_user.user_class
   email:
     from_address:                       # email address used as sender in emails
     from_display_name:                  # email name to display as sender in emails
