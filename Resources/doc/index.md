@@ -3,13 +3,11 @@ Getting Started With BagLoginBundle
 
 ## Prerequisites
 
-This version of the bundle requires Symfony 2.1+. If you are using Symfony
-2.0.x, please use the 1.2.x releases of the bundle.
+This version of the bundle requires Symfony 2.1+.
 
 The BagLoginBundle is build on top of following bundles:
 
  - [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle)
- - [FOSRestBundle](https://github.com/FriendsOfSymfony/FOSRestBundle)
  - [FOSOAuthServerBundle](https://github.com/FriendsOfSymfony/FOSOAuthServerBundle)
  - [HWIOAuthBundle](https://github.com/hwi/HWIOAuthBundle)
 
@@ -21,12 +19,13 @@ Following links can be useful to:
 
 Installation is a quick (I promise!) 7 step process:
 
-1. Download BagLoginBundle using composer
-2. Enable the Bundle
-3. Configure the BagLoginBundle
-4. Import BagLoginBundle routing files
+1. Install BagLoginBundle using composer
+2. Configure the bundle in prerequisites
+3. Enable the Bundle
+4. Configure the BagLoginBundle
+5. Import BagLoginBundle routing files
 
-### Step 1: Download BagLoginBundle using composer
+### Step 1: Install BagLoginBundle using composer
 
 Add BagLoginBundle by running the command:
 
@@ -36,9 +35,13 @@ $ php composer.phar require bagbyte/login-bundle "dev-master"
 
 Composer will install the bundle to your project's `vendor/bagbyte` directory.
 
-### Step 2: Enable the bundle
+### Step 2: Configure the bundle in prerequisites
 
-Enable the bundle in the kernel:
+Before to go on with the BagLoginBundle configuration makes sure to have properly configured the bundles in the prerequisites section.
+
+### Step 3: Enable the bundle
+
+Enable the bundle in the AppKernel:
 
 ``` php
 <?php
@@ -53,46 +56,29 @@ public function registerBundles()
 }
 ```
 
-### Step 3: Configure the BagLoginBundle
+### Step 4: Configure the BagLoginBundle
 
-In order for Symfony's security component to use the BagLoginBundle, you must
-tell it to do so in the `security.yml` file. The `security.yml` file is where the
-basic security configuration for your application is contained.
-
-Below is a minimal example of the configuration necessary to use the BagLoginBundle
-in your application:
+Update the app/config/config.yml file adding the following lines:
 
 ``` yaml
 # app/config/config.yml
 ...
 
   bag_login:
-    user_class:                           Project\CoreBundle\Entitiy\User # Your User class full path
     email:
-      from_address:                       no_reply@company.com            # email address used as sender in emails
-      from_display_name:                  Company Name Ltd.               # email name to display as sender in emails
-      send_registration_email:            true                            # true|false, if true, after a new registration the user is notified with an email
-      require_account_verification:       false                           # true|false, if true, after a new registration the account will not be active, a link will be sent in the registration email, the user has to click on it in order to activate the account
-      send_activation_email:              true                            # true|false, if true, after the activation of the account, an email is sent to the user
-      send_password_changed_email:        false                           # true|false, if true, after the user change his password, an email is sent to the user
-    form:
-      type:
-        registration:                     Project\CoreBundle\Form\Type\RegistrationType  # registration form type full path
+      from_address:         no_reply@company.com    # email address used as sender in emails
+      from_display_name:    Company Name Ltd.       # email name to display as sender in emails
 ```
 
 **Note:**
 
 > The full configuration is described here: [config.md](https://github.com/bagbyte/BagLoginBundle/blob/master/Resources/doc/config.md)
 
-### Step 4: Import BagLoginBundle routing files
+### Step 5: Import BagLoginBundle routing files
 
 Now that you have activated and configured the bundle, all that is left to do is
 import the BagLoginBundle routing files.
-
-By importing the routing files you will have ready made pages for things such as
-logging in, registration, etc.
-
-In YAML:
+Add the following line to your app/config/routing.yml file.
 
 ``` yaml
 # app/config/routing.yml
