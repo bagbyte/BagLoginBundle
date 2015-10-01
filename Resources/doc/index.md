@@ -8,12 +8,11 @@ This version of the bundle requires Symfony 2.1+.
 The BagLoginBundle is build on top of following bundles:
 
  - [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle)
+ - [FOSRestBundle](https://github.com/FriendsOfSymfony/FOSRestBundle)
  - [FOSOAuthServerBundle](https://github.com/FriendsOfSymfony/FOSOAuthServerBundle)
- - [HWIOAuthBundle](https://github.com/hwi/HWIOAuthBundle)
 
 Following links can be useful to:
  - [Integrating FOSOAuthServerBundle with FOSUserBundle](http://blog.tankist.de/blog/2013/07/16/oauth2-explained-part-1-principles-and-terminology/)
- - [Integrating HWIOAuthBundle with FOSUserBundle](https://gist.github.com/danvbe/4476697)
 
 ## Installation
 
